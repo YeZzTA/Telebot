@@ -32,7 +32,7 @@ def lalala(message):
         if message.text == 'Пойду делать домашку':
             bot.send_message(message.chat.id, 'Удачи тебе! Про тренировки не забывай!')
         elif message.text == 'Кардио':
-            markup = types.InlineKeyboardMarkup(row_width=4)
+            markup = types.InlineKeyboardMarkup(row_width=5)
             pushup = types.InlineKeyboardButton("Взрывные отжимания", callback_data='pushup1')
             squat = types.InlineKeyboardButton("Взрывные приседания", callback_data='squat1')
 
