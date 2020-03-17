@@ -37,7 +37,7 @@ def lalala(message):
             squat = types.InlineKeyboardButton("Взрывные приседания", callback_data='squat1')
 
             markup.add(pushup, squat)
-            bot.send_message(message.chat.id, 'Ты выбрал Кардио! Для хорошей тренировки выполни 5 кругов каждого упражнения! Выбери, себе упражнение:', reply_markup=markup)            
+            bot.send_message(message.chat.id, 'Ты выбрал Кардио! Для хорошей тренировки выполни 5 кругов каждого упражнения!\n\nВыбери себе упражнение:', reply_markup=markup)            
         elif message.text == 'Dynamics':
             markup = types.InlineKeyboardMarkup(row_width=2)
             sklepka = types.InlineKeyboardButton("Склёпка", callback_data='sklepka1')
@@ -87,13 +87,13 @@ def callback_inline(call):
                                       reply_markup=None)
             elif call.data == 'pushup1':
                 bot.send_message(call.message.chat.id,
-                                 'Твоё упражнение -- взрывное отжимание, количевство раз - ' + str(random.randint(1,30)))
+                                 'Твоё упражнение -- взрывное отжимание, количевство раз - ' + str(random.randint(1,30)) + '.')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="Кардио:",
                                       reply_markup=None)    
             elif call.data == 'squat1':
                 bot.send_message(call.message.chat.id,
-                                 'Твоё упражнение -- взрывное приседание, количевство раз - ' + str(random.randint(1,30)))
+                                 'Твоё упражнение -- взрывное приседание, количевство раз - ' + str(random.randint(1,30)) + '.')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="Кардио:",
                                       reply_markup=None)                                                
