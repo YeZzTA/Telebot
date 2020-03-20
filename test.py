@@ -114,7 +114,7 @@ def callback_inline(call):
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="Bring Sally Up Challenge",
                                       reply_markup=None)
-            elif call.data == 'pusll1':
+            elif call.data == 'pull1':
                 bot.send_message(call.message.chat.id,
                                  'Сейчас будет жарко!\n\n1. Подтягивания 3х3х3, в нижней, средней и пиковой точке задержка на 3 секунды - 5 раз\n\n2. Подятгивания с медленным опусканием - 5 раз\n\n3. Подтягивания - 5 раз\n\n4. Подведение носков к турнику - 10 раз\n\nВыполняем все упражнения не слазя с турника!\nНе переживай, если что-то не выходит с первого раза, это лишь ещё одна возможность стать лучше!')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
