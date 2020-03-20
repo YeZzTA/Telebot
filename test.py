@@ -128,7 +128,7 @@ def callback_inline(call):
                                       reply_markup=None)
             elif call.data == 'week1':
                 bot.send_message(call.message.chat.id,
-                                 'Challenge на неделю - отжимание в течении 1 минуты. Тебе нужно взять таймер сделать 1 отжиманиев течении минуты, постарайся сделать фазу опускания и фазу подъёма равными по 30 секунд! Удачи, у тебя целая неделя, что бы показать затащить!')
+                                 'Challenge на неделю - отжимание в течении 1 минуты. Тебе нужно взять таймер сделать 1 отжиманиев течении минуты, постарайся сделать фазу опускания и фазу подъёма равными по 30 секунд! Удачи, у тебя целая неделя, что бы затащить!')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="Еженедельный Challenge:",
                                       reply_markup=None)
