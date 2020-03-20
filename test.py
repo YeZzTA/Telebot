@@ -32,12 +32,11 @@ def lalala(message):
         if message.text == 'Пойду делать домашку':
             bot.send_message(message.chat.id, 'Удачи тебе! Про тренировки не забывай!')
         elif message.text == 'Кардио':
-            markup = types.InlineKeyboardMarkup(row_width=5)
-            pushup = types.InlineKeyboardButton("Взрывные отжимания", callback_data='pushup1')
-            squat = types.InlineKeyboardButton("Приседания", callback_data='squat1')
+            markup = types.InlineKeyboardMarkup(row_width=2)
+            finish = types.InlineKeyboardButton("Готово", callback_data='finish')
+            markup.add(finish)
 
-            markup.add(pushup, squat)
-            bot.send_message(message.chat.id, 'Ты выбрал Кардио! Для хорошей тренировки выполни 5 кругов каждого упражнения!\n\nВыбери себе упражнение:', reply_markup=markup)            
+            bot.send_message(message.chat.id, 'Ты выбрал Кардио! Вот твоя  тренировка:\n\n1. Бёрпи - ' + str(random.randint(10,15)) +' повторений\nОтдых 10 секунд. \n\n2. Медленные отжимание - ' + str(random.randint(10,15)) + ' повторений\nОтдых 10 секунд.\n\n3. Отжимания 2х2х2, задерживаемся в нижней, средней и верхней точке 2 секунды - ' + str(random.randint(8,12)) +' повторений\n Отдых 10 секунд.\n\n4. Отжимания - ' + str(random.randint(10,15)) + ' повторений\nОтдых 10 секунд.\n\n5. Приседания с прыжком и задержкой 3 секунды в низу - ' + str(random.randint(10,20)) + ' повторений\nОтдых 10 секунд.\n\n6. Медленные приседания - ' + str(random.randint(8,15)) + ' повторений\nОтдых 10 секунд.\n\n7. Ножницы на пресс - ' + str(random.randint(20,30)) + ' раз\nОтдых 10 секунд.\n\n8. Велосипед - ' + str(random.randint(20,30)) + ' раз\nОтдых 10 секунд.\n\n9. Скручивания с задержкой в точке с пиковой нагрузкой - ' + str(random.randint(10,20)) + ' повторений\nОтдых 10 секунд.\n\n10. Планка на локтях - 30 секунд\nОтдых 10 секунд.\n\n11. Х-прыжки - ' + str(random.randint(15,30)) + ' раз\nОтдых 10 секунд.\n\n12. Бёрпи - ' + str(random.randint(10,15)) + ' повторений\n\nПострой своё тело повторение за повторение!')            
         elif message.text == 'Dynamics':
             markup = types.InlineKeyboardMarkup(row_width=2)
             sklepka = types.InlineKeyboardButton("Склёпка", callback_data='sklepka1')
@@ -84,19 +83,13 @@ def callback_inline(call):
                                  parse_mode='html')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="Учим динамику:",
-                                      reply_markup=None)
-            elif call.data == 'pushup1':
+                                      reply_markup=None)      
+            elif call.data == 'finish':
                 bot.send_message(call.message.chat.id,
-                                 'Твоё упражнение -- взрывное отжимание, количевство раз - ' + str(random.randint(1,30)) + '.')
+                                 'Просто красавчик, 30 минут боли сегодня, подарят тебе гордость на всю жизнь!!!\nПродолжай работать вместе со мной!')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                      text="Кардио:",
-                                      reply_markup=None)    
-            elif call.data == 'squat1':
-                bot.send_message(call.message.chat.id,
-                                 'Твоё упражнение -- взрывное приседание, количевство раз - ' + str(random.randint(1,30)) + '.')
-                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                      text="Кардио:",
-                                      reply_markup=None)                                                
+                                      text="Хорошая работа! Так держать!",
+                                      reply_markup=None)                                                                                                                
             elif call.data == 'new':
                 bot.send_message(call.message.chat.id,
                                  'Передний вис Уровень 1.\n\nСначала разберёмся с техникой. Руки всегда прямые, стараемся избегать сгибаний в локтях. При идеальной форме тело должно идти одной линией, без прогибов в пояснице, лопатки сведены.\n\nТеперь перейдём к тренировке.\n\n1. Подтягивания 5-10 повторений 4 подхода.\n\n2. Сведение лопаток, висим на турнике и сводим лопатки вертикальным движением корпуса вверх, 10-15 повторений на 3 подхода.\n\n3. Ноги к перекладине. С положения виса на турнике поднимает ноги и пытаемся коснутся носками турника 3 подхода по 8 повторений.\n\n4. С положения виса на турнике сгибаем ноги в коленях и подводим к пресу, удерживаем 15-20 секунд на 4 подхода.')
@@ -111,7 +104,7 @@ def callback_inline(call):
                                       reply_markup=None)
             elif call.data == 'new1':
                 bot.send_message(call.message.chat.id,
-                                 'Планш <b>Уровень 1.</b>\n\nДля начала разберёмся с правильной формой.\n1. При планше руки должны быть прямые, без сгибаний в локтях.\n\n2. Лопатки разведены, создаём небольшой горб на спине.\n\n3. Взгляд направлен вперёд.',
+                                 'Планш <b>Уровень 1.</b>\n\nДля начала разберёмся с правильной формой.\n1. При планше руки должны быть прямые, без сгибаний в локтях.\n\n2. Лопатки разведены, создаём небольшой горб на спине.\n\n3. Взгляд направлен вперёд.\n\nhttps://www.youtube.com/watch?v=POq_-CTIX3o&t=263s',
                                  parse_mode='html')
                 bot.send_message(call.message.chat.id,
                                  'Теперь можно начать тренировку.\n\n1. Занимаем положение упор лёжа и пытаемся накатитя плечами максимально вперёд, делаем отжимания 3 подхода на 1-2 повторений.\n\n2. Накатываем плечи вперёд и удерживаем положение максимальное время на 3 подхода.\n\n3. Накаты плечами вперёд, как можно дальше, из положения упора лёжа, затем возвращаемся в стартовое положение, 10 раз.\n\n4. Становимся на колени и повторяем предыдущее упражнение с колен.\n\n\nВсегда следи, что бы руки были прямыми!\n\nДелаем таких 2 круга! После первого круга отдых 2 минуты! Отдых 60-90 секунд между упражнениями!')
