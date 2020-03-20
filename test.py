@@ -16,8 +16,9 @@ def welcome(message):
     item3 = types.KeyboardButton("Front Lever")
     item4 = types.KeyboardButton("Пойду делать домашку")
     item5 = types.KeyboardButton("Кардио")
+    item6 = types.KeyboardButton("Challenge")
 
-    markup.add(item1, item2, item3, item4, item5)
+    markup.add(item1, item2, item3, item4, item5, item6)
 
     bot.send_message(message.chat.id,
                      "Добро пожаловать, {0.first_name}!\nЯ - <b>{1.first_name}</b>, бот созданный для изучения новых элементов воркаута.".format(
@@ -34,10 +35,20 @@ def lalala(message):
         elif message.text == 'Кардио':
             markup = types.InlineKeyboardMarkup(row_width=2)
             finish = types.InlineKeyboardButton("Готово", callback_data='finish1')
-            lenb = types.InlineKeyboardButton("Лень", callback_data='lenb1')            
-            
+            lenb = types.InlineKeyboardButton("Лень", callback_data='lenb1')
+
             markup.add(finish, lenb)
-            bot.send_message(message.chat.id, 'Ты выбрал Кардио! Вот твоя  тренировка:\n\n1. Бёрпи - ' + str(random.randint(10,15)) +' повторений\nОтдых 15 секунд. \n\n2. Медленные отжимание - ' + str(random.randint(10,15)) + ' повторений\nОтдых 15 секунд.\n\n3. Отжимания 2х2х2, задерживаемся в нижней, средней и верхней точке 2 секунды - ' + str(random.randint(8,12)) +' повторений\n Отдых 15 секунд.\n\n4. Отжимания - ' + str(random.randint(10,15)) + ' повторений\nОтдых 15 секунд.\n\n5. Приседания с прыжком и задержкой 3 секунды в низу - ' + str(random.randint(10,20)) + ' повторений\nОтдых 15 секунд.\n\n6. Медленные приседания - ' + str(random.randint(8,15)) + ' повторений\nОтдых 15 секунд.\n\n7. Ножницы на пресс - ' + str(random.randint(20,30)) + ' раз\nОтдых 15 секунд.\n\n8. Велосипед - ' + str(random.randint(20,30)) + ' раз\nОтдых 15 секунд.\n\n9. Скручивания с задержкой в точке с пиковой нагрузкой - ' + str(random.randint(10,20)) + ' повторений\nОтдых 15 секунд.\n\n10. Планка на локтях - 30 секунд\nОтдых 10 секунд.\n\n11. Х-прыжки - ' + str(random.randint(15,30)) + ' раз\nОтдых 15 секунд.\n\n12. Бёрпи - ' + str(random.randint(10,15)) + ' повторений\n\nПострой своё тело повторение за повторением!', reply_markup=markup)            
+            bot.send_message(message.chat.id, 'Ты выбрал Кардио! Вот твоя  тренировка:\n\n1. Бёрпи - ' + str(random.randint(10,15)) +' повторений\nОтдых 15 секунд. \n\n2. Медленные отжимание - ' + str(random.randint(10,15)) + ' повторений\nОтдых 15 секунд.\n\n3. Отжимания 2х2х2, задерживаемся в нижней, средней и верхней точке 2 секунды - ' + str(random.randint(8,12)) +' повторений\n Отдых 15 секунд.\n\n4. Отжимания - ' + str(random.randint(10,15)) + ' повторений\nОтдых 15 секунд.\n\n5. Приседания с прыжком и задержкой 3 секунды в низу - ' + str(random.randint(10,20)) + ' повторений\nОтдых 15 секунд.\n\n6. Медленные приседания - ' + str(random.randint(8,15)) + ' повторений\nОтдых 15 секунд.\n\n7. Ножницы на пресс - ' + str(random.randint(20,30)) + ' раз\nОтдых 15 секунд.\n\n8. Велосипед - ' + str(random.randint(20,30)) + ' раз\nОтдых 15 секунд.\n\n9. Скручивания с задержкой в точке с пиковой нагрузкой - ' + str(random.randint(10,20)) + ' повторений\nОтдых 15 секунд.\n\n10. Планка на локтях - 30 секунд\nОтдых 15 секунд.\n\n11. Х-прыжки - ' + str(random.randint(15,30)) + ' раз\nОтдых 15 секунд.\n\n12. Бёрпи - ' + str(random.randint(10,15)) + ' повторений\n\nПострой своё тело повторение за повторением!', reply_markup=markup)            
+        elif message.text == 'Challenge':
+            markup = types.InlineKeyboardMarkup(row_width=2)
+            push = types.InlineKeyboardButton("Push", callback_data='push1')
+            pull = types.InlineKeyboardButton("Pull", callback_data='pull1')
+            daily = types.InlineKeyboardButton("Ежедневный", callback_data='daily1')
+            week = types.InlineKeyboardButton("Еженедельный", callback_data='week1')
+
+
+            markup.add(push, pull, daily, week)
+            bot.send_message(message.chat.id, 'Раздел Challenge проверит твои силы!', reply_markup=markup)        
         elif message.text == 'Dynamics':
             markup = types.InlineKeyboardMarkup(row_width=2)
             sklepka = types.InlineKeyboardButton("Склёпка", callback_data='sklepka1')
@@ -96,7 +107,31 @@ def callback_inline(call):
                                  'Не ленись, ведь твоя работа сегодня - это твой вклад в завтра.')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="Надеюсь, ты ошибся кнопкой)",
-                                      reply_markup=None)                                                                                                                                                   
+                                      reply_markup=None)     
+            elif call.data == 'push1':
+                bot.send_message(call.message.chat.id,
+                                 'Готовся, сейчас будет месиво! Bring Sally Up Challenge проверит не только твою физическую подготовку, но и реально заставит боротся за каждую секунду!\n\nУсловия, включаем песню/видео и занимаем позицию отжиманий. Когда в песне поют "Bring Sally Down" мы опускаемся вниз и удерживаем позицию без касания пола, когда поют "Bring Sally Up" мы переходим на вытянутые руки.\n\nПример в видео ниже. Хорошей тренировки!\nНе переживай, если что-то не выходит с первого раза, это лишь ещё одна возможность стать лучше!\n\nhttps://www.youtube.com/watch?v=41N6bKO-NVI')
+                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      text="Bring Sally Up Challenge",
+                                      reply_markup=None)
+            elif call.data == 'pusll1':
+                bot.send_message(call.message.chat.id,
+                                 'Сейчас будет жарко!\n\n1. Подтягивания 3х3х3, в нижней, средней и пиковой точке задержка на 3 секунды - 5 раз\n\n2. Подятгивания с медленным опусканием - 5 раз\n\n3. Подтягивания - 5 раз\n\n4. Подведение носков к турнику - 10 раз\n\nВыполняем все упражнения не слазя с турника!\nНе переживай, если что-то не выходит с первого раза, это лишь ещё одна возможность стать лучше!')
+                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      text="Super pull set",
+                                      reply_markup=None)
+            elif call.data == 'daily1':
+                bot.send_message(call.message.chat.id,
+                                 'Challenge на сегодня - 5 отжиманий с хлопком подряд! Если ещё не умеешь отжиматься с хлопком, то для тебя Challenge это научиться. Пора повышать свой уровень!')
+                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      text="Ежедневный Challenge:",
+                                      reply_markup=None)
+            elif call.data == 'week1':
+                bot.send_message(call.message.chat.id,
+                                 'Challenge на неделю - отжимание в течении 1 минуты. Тебе нужно взять таймер сделать 1 отжиманиев течении минуты, постарайся сделать фазу опускания и фазу подъёма равными по 30 секунд! Удачи, у тебя целая неделя, что бы показать затащить!')
+                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      text="Еженедельный Challenge:",
+                                      reply_markup=None)
             elif call.data == 'new':
                 bot.send_message(call.message.chat.id,
                                  'Передний вис Уровень 1.\n\nСначала разберёмся с техникой. Руки всегда прямые, стараемся избегать сгибаний в локтях. При идеальной форме тело должно идти одной линией, без прогибов в пояснице, лопатки сведены.\n\nТеперь перейдём к тренировке.\n\n1. Подтягивания 5-10 повторений 4 подхода.\n\n2. Сведение лопаток, висим на турнике и сводим лопатки вертикальным движением корпуса вверх, 10-15 повторений на 3 подхода.\n\n3. Ноги к перекладине. С положения виса на турнике поднимает ноги и пытаемся коснутся носками турника 3 подхода по 8 повторений.\n\n4. С положения виса на турнике сгибаем ноги в коленях и подводим к пресу, удерживаем 15-20 секунд на 4 подхода.')
@@ -111,8 +146,7 @@ def callback_inline(call):
                                       reply_markup=None)
             elif call.data == 'new1':
                 bot.send_message(call.message.chat.id,
-                                 'Планш Уровень 1.\n\nДля начала разберёмся с правильной формой.\n1. При планше руки должны быть прямые, без сгибаний в локтях.\n\n2. Лопатки разведены, создаём небольшой горб на спине.\n\n3. Взгляд направлен вперёд.\n\nhttps://www.youtube.com/watch?v=POq_-CTIX3o&t=263s',
-                                 parse_mode='html')
+                                 'Планш Уровень 1.\n\nДля начала разберёмся с правильной формой.\n1. При планше руки должны быть прямые, без сгибаний в локтях.\n\n2. Лопатки разведены, создаём небольшой горб на спине.\n\n3. Взгляд направлен вперёд.\n\nhttps://www.youtube.com/watch?v=POq_-CTIX3o&t=263s')
                 bot.send_message(call.message.chat.id,
                                  'Теперь можно начать тренировку.\n\n1. Занимаем положение упор лёжа и пытаемся накатитя плечами максимально вперёд, делаем отжимания 3 подхода на 1-2 повторений.\n\n2. Накатываем плечи вперёд и удерживаем положение максимальное время на 3 подхода.\n\n3. Накаты плечами вперёд, как можно дальше, из положения упора лёжа, затем возвращаемся в стартовое положение, 10 раз.\n\n4. Становимся на колени и повторяем предыдущее упражнение с колен.\n\n\nВсегда следи, что бы руки были прямыми!\n\nДелаем таких 2 круга! После первого круга отдых 2 минуты! Отдых 60-90 секунд между упражнениями!')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
