@@ -122,7 +122,7 @@ def callback_inline(call):
                                       reply_markup=None)
             elif call.data == 'daily1':
                 bot.send_message(call.message.chat.id,
-                                 'Challenge на сегодня - 5 отжиманий с хлопком подряд! Если ещё не умеешь отжиматься с хлопком, то для тебя Challenge это научиться. Пора повышать свой уровень!')
+                                 'Challenge на сегодня - 5 отжиманий с хлопком подряд! Если ещё не умеешь отжиматься с хлопком, то для тебя Challenge это научиться.\n\nПора повышать свой уровень!')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="Ежедневный Challenge:",
                                       reply_markup=None)
