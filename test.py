@@ -35,7 +35,7 @@ def lalala(message):
             markup = types.InlineKeyboardMarkup(row_width=2)
             finish = types.InlineKeyboardButton("Готово", callback_data='finish1')
             lenb = types.InlineKeyboardButton("Лень", callback_data='lenb1')            
-            markup.add(finish)
+            markup.add(finish, lenb)
 
             bot.send_message(message.chat.id, 'Ты выбрал Кардио! Вот твоя  тренировка:\n\n1. Бёрпи - ' + str(random.randint(10,15)) +' повторений\nОтдых 10 секунд. \n\n2. Медленные отжимание - ' + str(random.randint(10,15)) + ' повторений\nОтдых 10 секунд.\n\n3. Отжимания 2х2х2, задерживаемся в нижней, средней и верхней точке 2 секунды - ' + str(random.randint(8,12)) +' повторений\n Отдых 10 секунд.\n\n4. Отжимания - ' + str(random.randint(10,15)) + ' повторений\nОтдых 10 секунд.\n\n5. Приседания с прыжком и задержкой 3 секунды в низу - ' + str(random.randint(10,20)) + ' повторений\nОтдых 10 секунд.\n\n6. Медленные приседания - ' + str(random.randint(8,15)) + ' повторений\nОтдых 10 секунд.\n\n7. Ножницы на пресс - ' + str(random.randint(20,30)) + ' раз\nОтдых 10 секунд.\n\n8. Велосипед - ' + str(random.randint(20,30)) + ' раз\nОтдых 10 секунд.\n\n9. Скручивания с задержкой в точке с пиковой нагрузкой - ' + str(random.randint(10,20)) + ' повторений\nОтдых 10 секунд.\n\n10. Планка на локтях - 30 секунд\nОтдых 10 секунд.\n\n11. Х-прыжки - ' + str(random.randint(15,30)) + ' раз\nОтдых 10 секунд.\n\n12. Бёрпи - ' + str(random.randint(10,15)) + ' повторений\n\nПострой своё тело повторение за повторение!')            
         elif message.text == 'Dynamics':
