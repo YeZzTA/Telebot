@@ -122,7 +122,7 @@ def callback_inline(call):
                                       reply_markup=None)
             elif call.data == 'daily1':
                 bot.send_message(call.message.chat.id,
-                                 'Challenge на сегодня - 5 отжиманий с хлопком подряд! Если ещё не умеешь отжиматься с хлопком, то для тебя Challenge это научиться.\n\nПора повышать свой уровень!')
+                                 '1. Отжимания - 20 повторений\n\n2. Приседания - 20 повторений\n\n3. Скручивания на прес - 20 повторений\n\nДелаем 4 круга, в каждом круге делаем -5 в каждом упражнении, то есть 20, 15, 10, 5 всех упражнений. Цель - сделать меньше чем за 5 минут.\n\nПора прокачать выносливость!')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="Ежедневный Challenge:",
                                       reply_markup=None)
