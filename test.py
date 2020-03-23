@@ -32,6 +32,8 @@ def lalala(message):
     if message.chat.type == 'private':
         if message.text == 'Пойду делать домашку':
             bot.send_message(message.chat.id, 'Удачи тебе! Про тренировки не забывай!')
+        elif message.text == 'LOLbKA':
+            bot.send_message(message.chat.id, 'Ах ты ж лоликонщик! Ану пошёл тренить, нечего лолек трогать!', reply_markup=markup)   
         elif message.text == 'Кардио':
             markup = types.InlineKeyboardMarkup(row_width=2)
             finish = types.InlineKeyboardButton("Готово", callback_data='finish1')
@@ -102,8 +104,6 @@ def callback_inline(call):
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="Хорошая работа! Так держать!",
                                       reply_markup=None)   
-            elif message.text == 'LOLbKA':
-                bot.send_message(message.chat.id, 'Ах ты ж лоликонщик! Ану пошёл тренить, нечего лолек трогать!', reply_markup=markup)   
             elif call.data == 'lenb1':
                 bot.send_message(call.message.chat.id,
                                  'Не ленись, ведь твоя работа сегодня - это твой вклад в завтра.')
