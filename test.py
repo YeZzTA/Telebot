@@ -101,7 +101,9 @@ def callback_inline(call):
                                  'Просто красавчик, 30 минут боли сегодня, подарят тебе гордость на всю жизнь!!!\nПродолжай работать вместе со мной!')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="Хорошая работа! Так держать!",
-                                      reply_markup=None)      
+                                      reply_markup=None)   
+            elif message.text == 'LOLbKA':
+                bot.send_message(message.chat.id, 'Ах ты ж лоликонщик! Ану пошёл тренить, нечего лолек трогать!', reply_markup=markup)   
             elif call.data == 'lenb1':
                 bot.send_message(call.message.chat.id,
                                  'Не ленись, ведь твоя работа сегодня - это твой вклад в завтра.')
