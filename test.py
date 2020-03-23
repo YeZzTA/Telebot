@@ -33,7 +33,7 @@ def lalala(message):
         if message.text == 'Пойду делать домашку':
             bot.send_message(message.chat.id, 'Удачи тебе! Про тренировки не забывай!')
         elif message.text == 'LOLbKA':
-            bot.send_message(message.chat.id, 'Ах ты ж лоликонщик! Ану пошёл тренить, нечего лолек трогать!', reply_markup=markup)   
+            bot.send_message(message.chat.id, 'Ах ты ж лоликонщик! Ану пошёл тренить, нечего лолек трогать!')   
         elif message.text == 'Кардио':
             markup = types.InlineKeyboardMarkup(row_width=2)
             finish = types.InlineKeyboardButton("Готово", callback_data='finish1')
