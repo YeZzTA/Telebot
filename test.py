@@ -89,14 +89,14 @@ def callback_inline(call):
                                  'Видео, в котором учтены все ошибки. \nГлавная проблема - сгибание рук, не сгибайте руки при залёте на труник.\n\nhttps://www.youtube.com/watch?v=W6VRWt8OZFQ',
                                  parse_mode='html')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                      text="Учим динамику:",
+                                      text="<b>Учим динамику</b>:", parse_mode='html',
                                       reply_markup=None)
             elif call.data == 'zamok1':
                 bot.send_message(call.message.chat.id,
                                  'Основной ошибкой является неправильная раскачка.\nПодробнее в видео\n\nhttps://www.youtube.com/watch?v=GvJe3MVk6tY',
                                  parse_mode='html')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                      text="Учим динамику:",
+                                      text="<b>Учим динамику</b>:", parse_mode='html',
                                       reply_markup=None)      
             elif call.data == 'finish1':
                 bot.send_message(call.message.chat.id,
@@ -114,13 +114,13 @@ def callback_inline(call):
                 bot.send_message(call.message.chat.id,
                                  'Готовся, сейчас будет месиво! Bring Sally Up Challenge проверит не только твою физическую подготовку, но и реально заставит боротся за каждую секунду!\n\nУсловия, включаем песню/видео и занимаем позицию отжиманий. Когда в песне поют "Bring Sally Down" мы опускаемся вниз и удерживаем позицию без касания пола, когда поют "Bring Sally Up" мы переходим на вытянутые руки.\n\nПример в видео ниже. Хорошей тренировки!\n\nНе переживай, если что-то не выходит с первого раза, это лишь ещё одна возможность стать лучше!\n\nhttps://www.youtube.com/watch?v=41N6bKO-NVI')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                      text="Bring Sally Up Challenge",
+                                      text="<b>Bring Sally Up Challenge</b>:", parse_mode='html',
                                       reply_markup=None)
             elif call.data == 'pull1':
                 bot.send_message(call.message.chat.id,
                                  'Сейчас будет жарко!\n\n1. Подтягивания 3х3х3, в нижней, средней и пиковой точке задержка на 3 секунды - 5 раз\n\n2. Подятгивания с медленным опусканием - 5 раз\n\n3. Подтягивания - 5 раз\n\n4. Подведение носков к турнику - 10 раз\n\nВыполняем все упражнения не слазя с турника!\n\nНе переживай, если что-то не выходит с первого раза, это лишь ещё одна возможность стать лучше!')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                      text="Super pull set",
+                                      text="<b>Super pull set</b>:", parse_mode='html',
                                       reply_markup=None)
             elif call.data == 'daily1':
                 bot.send_message(call.message.chat.id,
@@ -138,13 +138,13 @@ def callback_inline(call):
                 bot.send_message(call.message.chat.id,
                                  'Передний вис <b>Уровень 1</b>.\n\nСначала разберёмся с техникой. Руки всегда прямые, стараемся избегать сгибаний в локтях. При идеальной форме тело должно идти одной линией, без прогибов в пояснице, лопатки сведены.\n\nТеперь перейдём к тренировке.\n\n1. Подтягивания 5-10 повторений 4 подхода.\n\n2. Сведение лопаток, висим на турнике и сводим лопатки вертикальным движением корпуса вверх, 10-15 повторений на 3 подхода.\n\n3. Ноги к перекладине. С положения виса на турнике поднимает ноги и пытаемся коснутся носками турника 3 подхода по 8 повторений.\n\n4. С положения виса на турнике сгибаем ноги в коленях и подводим к пресу, удерживаем 15-20 секунд на 4 подхода.', parse_mode='html')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                      text="Учим передний вис:",
+                                      text="<b>Учим передний вис</b>:", parse_mode='html',
                                       reply_markup=None)
             elif call.data == 'inter':
                 bot.send_message(call.message.chat.id,
                                  'Передний вис <b>Уровень 2</b>.\n\n0. Начнём с попыток. Для начала пробуем держать передний вис, 10-15 попыток\n\n1. Поднимаем колени к груди и занимаем позицию переднего виса, выпрямляем ноги и опускаемся максимально медленно. Повторяем 10-15 раз.\n\n2. Поднимаем колени к груди и принимаем положение переднего виса. Держим такую позицию 20 секунд.\n\n3. Подтягивания в уголке 3-8 раз.\n\n4. Носки к турнику 10-15 повторений.\n\n5. С положения виса сводим лопатки и пытаемся приподнять корпус, 10 повторений.\n\nДелаем 2 таких круга, отдых между всеми упражнениями 90 секунд.', parse_mode='html')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                      text="Учим передний вис:",
+                                      text="<b>Учим передний вис</b>:", parse_mode='html',
                                       reply_markup=None)
             elif call.data == 'new1':
                 bot.send_message(call.message.chat.id,
@@ -152,13 +152,13 @@ def callback_inline(call):
                 bot.send_message(call.message.chat.id,
                                  'Теперь можно начать тренировку.\n\n1. Занимаем положение упор лёжа и пытаемся накатитя плечами максимально вперёд, делаем отжимания 3 подхода на 1-2 повторений.\n\n2. Накатываем плечи вперёд и удерживаем положение максимальное время на 3 подхода.\n\n3. Накаты плечами вперёд, как можно дальше, из положения упора лёжа, затем возвращаемся в стартовое положение, 10 раз.\n\n4. Становимся на колени и повторяем предыдущее упражнение с колен.\n\n\nВсегда следи, что бы руки были прямыми!\n\nДелаем таких 2 круга! После первого круга отдых 2 минуты! Отдых 60-90 секунд между упражнениями!', parse_mode='html')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                      text="Учим планш:",
+                                      text="<b>Учим планш</b>:", parse_mode='html',
                                       reply_markup=None)
             elif call.data == 'inter1':
                 bot.send_message(call.message.chat.id,
                                  'Планш <b>Уровень 2</b>.\n\nНачнём тренировку!\n\n0. Перед началом попробуем сделать планш, 5-8 попыток.\n\n1. Накатываемся плечами вперёд, поднимаем таз и пытаемся подойти ногами как можно ближе к рукам, возвращаемся в исходное положение, 3 подхода на 7-10 повторений.\n\n2. Накатываем плечи вперёд и делаем 5-7 отжиманий на 4 подхода.\n\n3. Накатываем плечи и держим 20-30 секунд.\n\nДелаем 2 таких круга, после чего делаем упражнение №4.\n\n4. Ставим руки по шире и накатываем плечи вперёд, держим на максимум 5 раз.\n\nВсегда следите за прямыми руками! Отдых между кругами 2 минуты!', parse_mode='html')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                      text="Учим планш:",
+                                      text="<b>Учим планш</b>:", parse_mode='html',
                                       reply_markup=None)
 
     except Exception as e:
