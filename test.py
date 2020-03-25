@@ -7,22 +7,26 @@ from telebot import types
 bot = telebot.TeleBot("1126043908:AAGsfBWGOrl35xSs-OTOw1f_v8OBbt30_a0")
 
 
+@bot.message_handler(commands=['contact'])
+def contact(message):
+  bot.send_message(message.chat.id, "You can contact me <b>@YeZzT</b>".format(message.from_user, bot.get_me()), parse_mode='html')
+
+
 @bot.message_handler(commands=['start'])
 def welcome(message):
     # keyboard
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    item1 = types.KeyboardButton("Dynamics")
-    item2 = types.KeyboardButton("Planche")
-    item3 = types.KeyboardButton("Front Lever")
-    item4 = types.KeyboardButton("Homework")
+    item1 = types.KeyboardButton("Planche")
+    item2 = types.KeyboardButton("Dynamics")
+    item3 = types.KeyboardButton("Homework")
+    item4 = types.KeyboardButton("Frot Lever")
     item5 = types.KeyboardButton("Cardio")
     item6 = types.KeyboardButton("Challenge")
     #item7 = types.KeyboardButton("Basic movements, gain muscle")
     markup.add(item1, item2, item3, item4, item5, item6)
 
     bot.send_message(message.chat.id,
-                     "Добро пожаловать, <b>{0.first_name}</b>!\nЯ - <b>{1.first_name}</b>, бот созданный для изучения новых элементов воркаута.".format(
-                         message.from_user, bot.get_me()),
+                     "Добро пожаловать, <b>{0.first_name}</b>!\nЯ - <b>{1.first_name}</b>, бот созданный для изучения новых элементов воркаута.".format(message.from_user, bot.get_me()),
                      parse_mode='html', reply_markup=markup)
 
 
