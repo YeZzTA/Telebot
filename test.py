@@ -26,7 +26,7 @@ def welcome(message):
     markup.add(item1, item2, item3, item4, item5, item6)
 
     bot.send_message(message.chat.id,
-                     "Hi there, <b>{0.first_name}</b>!\nMe - <b>{1.first_name}</b>, bot which was created to learn new skills in Workout.\n\nWe constantly have new updates, so don't forget to update bot regularly❗️\n\nVersion - testing now.".format(message.from_user, bot.get_me()),
+                     "Hi there, <b>{0.first_name}</b>❗️\nMe - <b>{1.first_name}</b>, bot which was created to learn new skills in Workout.\n\nWe constantly have new updates, so don't forget to update bot regularly❗️\n\nVersion - testing now.".format(message.from_user, bot.get_me()),
                      parse_mode='html', reply_markup=markup)
 
 
