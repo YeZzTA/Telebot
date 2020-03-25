@@ -19,7 +19,7 @@ def welcome(message):
     item1 = types.KeyboardButton("Planche")
     item2 = types.KeyboardButton("Dynamics")
     item3 = types.KeyboardButton("Homework")
-    item4 = types.KeyboardButton("Frot Lever")
+    item4 = types.KeyboardButton("Front Lever")
     item5 = types.KeyboardButton("Cardio")
     item6 = types.KeyboardButton("Challenge")
     #item7 = types.KeyboardButton("Basic movements, gain muscle")
