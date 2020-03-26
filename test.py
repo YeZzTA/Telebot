@@ -54,7 +54,9 @@ def lalala(message):
             markup.add(push, pull, daily, week)
             bot.send_message(message.chat.id, 'Раздел Challenge проверит твои силы❗️', reply_markup=markup)     
         elif message.text == 'LOLbKA':
-            bot.send_message(message.chat.id, 'Ах ты ж лоликонщик❗️ Ану пошёл тренить, нечего лолек трогать❗️')                     
+            bot.send_message(message.chat.id, 'Ах ты ж лоликонщик❗️ Ану пошёл тренить, нечего лолек трогать❗️')   
+        elif message.text == 'J_U':
+            bot.send_message(message.chat.id, 'Секретный символ знаешь, молодец.\n\nСкоро здесь появятся подсказки к секретным командам❗️')                   
         elif message.text == 'Dynamics':
             markup = types.InlineKeyboardMarkup(row_width=2)
             sklepka = types.InlineKeyboardButton("Склёпка", callback_data='sklepka1')
