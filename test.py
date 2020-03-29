@@ -106,7 +106,7 @@ def lalala(message):
 
 
 @bot.callback_query_handler(func=lambda call: True)
-def callback_inline(call):
+def callback_inline1(call):
     try:
         if call.message:
             if call.data == 'bazachest':
@@ -167,7 +167,7 @@ def callback_inline(call):
 
 # Исходное сообщение
 @bot.callback_query_handler(func=lambda call: True)
-def callback_inline(call):
+def callback_inline2(call):
     try:
         if call.message:
             if call.data == 'sklepka1':
