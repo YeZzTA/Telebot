@@ -168,7 +168,7 @@ def callback_inline(call):
                                       reply_markup=None)  
 
             elif data == 'bazachest':
-                bot.edit_message_text(
+                bot.edit_message_text(message.chat.id,
                     text=current_text,
                     reply_markup=get_keyboard2())                
             elif call.data == 'bazachest1':
