@@ -7,41 +7,6 @@ from telebot import types
 bot = telebot.TeleBot("1126043908:AAGsfBWGOrl35xSs-OTOw1f_v8OBbt30_a0")
 
 
-#bazachest1 = "bazachest1"
-#bazachest2 = "bazachest2"
-#bazachest3 = "bazachest3"
-CALLBACK_BUTTON4_BACK = "callback_button4_back"
-CALLBACK_BUTTON5_TIME = "callback_button5_time"
-CALLBACK_BUTTON6_PRICE = "callback_button6_price"
-CALLBACK_BUTTON7_PRICE = "callback_button7_price"
-CALLBACK_BUTTON8_PRICE = "callback_button8_price"
-CALLBACK_BUTTON_HIDE_KEYBOARD = "callback_button9_hide"
-
-
-TITLES = {
-    bazachest1: "Chest LvL 1",
-    bazachest2: "Chest LvL 2",
-    bazachest3: "Chest LvL3",
-    CALLBACK_BUTTON4_BACK: "Назад ⬅️",
-    CALLBACK_BUTTON5_TIME: "Время ⏰",
-    CALLBACK_BUTTON6_PRICE: "BTC 💰",
-    CALLBACK_BUTTON7_PRICE: "LTC 💰",
-    CALLBACK_BUTTON8_PRICE: "ETH 💰",
-    CALLBACK_BUTTON_HIDE_KEYBOARD: "Спрять клавиатуру",
-}
-
-
-#def get_keyboard2():
- #         markup = types.InlineKeyboardMarkup(row_width=2)
-  #        bazachest1 = types.InlineKeyboardButton("Chest LvL 1", callback_data='bazachest1')  
-   #       bazachest2 = types.InlineKeyboardButton("Chest LvL 2", callback_data='bazachest2')
-    #      bazachest3 = types.InlineKeyboardButton("Chest LvL 3", callback_data='bazachest3')                         
-     #     markup.add(bazachest1, bazachest2, bazachest3)
-
-
-
-
-
 
 @bot.message_handler(commands=['contact'])
 def contact(message):
