@@ -22,8 +22,8 @@ def welcome(message):
     item4 = types.KeyboardButton("Front Lever")
     item5 = types.KeyboardButton("Cardio")
     item6 = types.KeyboardButton("Challenge")
-    #item7 = types.KeyboardButton("Basic movements, gain muscle")
-    markup.add(item1, item2, item3, item4, item5, item6)
+    item7 = types.KeyboardButton("Basic movements, gain muscle")
+    markup.add(item1, item2, item3, item4, item5, item6, item7)
 
     bot.send_message(message.chat.id,
                      "Hi there, <b>{0.first_name}</b>❗️\nMe - <b>{1.first_name}</b>, bot which was created to learn new skills in Workout.\n\nWe constantly have new updates, so don't forget to update bot regularly❗️\n\nVersion - testing now.".format(message.from_user, bot.get_me()),
