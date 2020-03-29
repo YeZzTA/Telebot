@@ -140,7 +140,7 @@ def callback_inline(call):
                 markup.add(bazachest1, bazachest2, bazachest3)
 
                 bot.send_message(call.message.chat.id,
-                                 '<b>Тренировка на грудные и трицепс❗️ Выбери свой уровень</b>:', parse_mode = 'html')
+                                 '<b>Тренировка на грудные и трицепс❗️ Выбери свой уровень</b>:', parse_mode = 'html', reply_markup=markup)
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="<b>Тренировка на грудные и трицепс</b>:", parse_mode='html',
                                       reply_markup=None)
@@ -154,7 +154,7 @@ def callback_inline(call):
                 markup.add(bazaspina1, bazaspina2, bazaspina3)
 
                 bot.send_message(call.message.chat.id,
-                                 '<b>Тренировка спины и плечей❗️ Выбери свой уровень</b>:', parse_mode = 'html')
+                                 '<b>Тренировка спины и плечей❗️ Выбери свой уровень</b>:', parse_mode = 'html', reply_markup=markup)
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="<b>Тренировка спины и плечей</b>:", parse_mode='html',
                                       reply_markup=None)  
@@ -168,7 +168,7 @@ def callback_inline(call):
                 markup.add(bazanogi1, bazanogi2, bazanogi3) 
 
                 bot.send_message(call.message.chat.id,
-                                 '<b>Тренировка ног❗️ Выбери свой уровень</b>:', parse_mode = 'html')
+                                 '<b>Тренировка ног❗️ Выбери свой уровень</b>:', parse_mode = 'html', reply_markup=markup)
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="<b>Тренеровка ног</b>:", parse_mode='html',
                                       reply_markup=None) 
@@ -182,7 +182,7 @@ def callback_inline(call):
                 markup.add(bazapress1, bazapress2, bazapress3)
 
                 bot.send_message(call.message.chat.id,
-                                 '<b>Тренировка пресса❗️ Выбери свой уровень</b>:', parse_mode = 'html')
+                                 '<b>Тренировка пресса❗️ Выбери свой уровень</b>:', parse_mode = 'html', reply_markup=markup)
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="<b>Тренеровка пресса</b>:", parse_mode='html',
                                       reply_markup=None)                
