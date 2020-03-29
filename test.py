@@ -107,7 +107,7 @@ def lalala(message):
 
 # Исходное сообщение
 @bot.callback_query_handler(func=lambda call: True)
-def callback_inline(call):
+def callback_inline1(call):
     try:
         if call.message:
             if call.data == 'sklepka1':
@@ -272,6 +272,10 @@ def callback_inline(call):
         print(repr(e))
 
 
+@bot.callback_query_handler(func=lambda call: True)
+def callback_inline2(call):
+    try:
+        if call.message:      
             elif call.data == 'bazachest':
                 markup = types.InlineKeyboardMarkup(row_width=2)
                 bazachest1 = types.InlineKeyboardButton("Chest LvL 1", callback_data='bazachest1')         
