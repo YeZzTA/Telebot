@@ -36,7 +36,7 @@ def lalala(message):
     if message.chat.type == 'private':
         if message.text == 'Homework':
             bot.send_message(message.chat.id, 'Удачи тебе❗️ Про тренировки не забывай❗️')
-        elif message.text == 'Базовые упражнения, рост мышц':
+            elif message.text == 'Basic movements, gain muscle':
               markup = types.InlineKeyboardMarkup(row_width=2)
               bazapush = types.InlineKeyboardButton("Push ups", callback_data='bazapush')
               bazapull = types.InlineKeyboardButton("Pull ups", callback_data='bazapull')
