@@ -36,25 +36,17 @@ def lalala(message):
     if message.chat.type == 'private':
         if message.text == 'Homework':
             bot.send_message(message.chat.id, 'Удачи тебе❗️ Про тренировки не забывай❗️')
-            elif message.text == 'Basic movements, gain muscle':
-              markup = types.InlineKeyboardMarkup(row_width=2)
-              bazapush = types.InlineKeyboardButton("Push ups", callback_data='bazapush')
-              bazapull = types.InlineKeyboardButton("Pull ups", callback_data='bazapull')
-              bazachest1 = types.InlineKeyboardButton("Chest LvL 1", callback_data='bazachest1')
-              bazaspina1 = types.InlineKeyboardButton("Back LvL 1", callback_data='bazaspina1')
-              bazanogi1 = types.InlineKeyboardButton("Legs LvL 1", callback_data='bazanogi1')
-              bazapress1 = types.InlineKeyboardButton("Abs LvL 1", callback_data='bazapress1')            
-              bazachest2 = types.InlineKeyboardButton("Chest LvL 2", callback_data='bazachest2')
-              bazaspina2 = types.InlineKeyboardButton("Back LvL 2", callback_data='bazaspina2')
-              bazanogi2 = types.InlineKeyboardButton("Legs LvL 2", callback_data='bazanogi2')
-              bazapress2 = types.InlineKeyboardButton("Abs LvL 2", callback_data='bazapress2')
-              bazachest3 = types.InlineKeyboardButton("Chest LvL 3", callback_data='bazachest3')
-              bazaspina3 = types.InlineKeyboardButton("Back LvL 3", callback_data='bazaspina3')
-              bazanogi3 = types.InlineKeyboardButton("Legs LvL 3", callback_data='bazanogi3')
-              bazapress3 = types.InlineKeyboardButton("Abs LvL 3", callback_data='bazapress3')
+        elif message.text == 'Basic movements, gain muscle':
+          markup = types.InlineKeyboardMarkup(row_width=2)
+          bazapush = types.InlineKeyboardButton("Push ups", callback_data='bazapush')
+          bazapull = types.InlineKeyboardButton("Pull ups", callback_data='bazapull')
+          bazachest = types.InlineKeyboardButton("Chest", callback_data='bazachest')
+          bazaspina = types.InlineKeyboardButton("Back", callback_data='bazaspina')
+          bazanogi = types.InlineKeyboardButton("Legs", callback_data='bazanogi')
+          bazapress = types.InlineKeyboardButton("Abs", callback_data='bazapress')          
 
-              markup.add(bazapush, bazapull, bazachest1, bazaspina1, bazanogi1, bazapress1, bazachest2, bazaspina2, bazanogi2, bazapress2, bazachest3, bazaspina3, bazanogi3, bazapress3)
-              bot.send_message(message.chat.id, 'Прокачай базовые движения, набери массу! Не забудь сделать тщательную разминку преде 🔥тренировкой, чтобы избежать травм❗️ Выбери упражнение или группу мышц, которую хочешь проработать:', reply_markup=markup)   
+          markup.add(bazapush, bazapull, bazachest, bazaspina, bazanogi, bazapress)
+          bot.send_message(message.chat.id, 'Прокачай базовые движения, набери массу! Не забудь сделать тщательную разминку преде 🔥тренировкой, чтобы избежать травм❗️ Выбери упражнение или группу мышц, которую хочешь проработать:', reply_markup=markup)   
         
         elif message.text == 'Cardio':
             markup = types.InlineKeyboardMarkup(row_width=2)
@@ -137,27 +129,55 @@ def callback_inline(call):
                                  'Увеличить количевство подтягиваний🔥 можно поработав над нашей <b>фазой опускания</b>, которая просто пропускается при выполнении на количевство.\n\nДля этого выполним лесенку, в которой немного изменим форму выполнения упражнения.\n\n<b>Форма</b>: Подтягиваемся, заводя подбородок над перекладиной и затем медленно опускаемся, разтягивая время опускания на 2-3 секунды❗️ Время отдыха между подходами регулируем обычным счётом, то есть, если только что было 5, то умножаем количевство на 2 и считаем про себя, будет 10 счётов для отдыха❗️\n\nРаботаем в таком стиле и да прибудет с вами 🚀прогресс❗️', parse_mode = 'html')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="<b>Увеличь количевство подтягиваний</b>:", parse_mode='html',
-                                      reply_markup=None)                                                      
-            
+                                      reply_markup=None)  
+
+            elif call.data == 'bazachest':
+                bot.send_message(call.message.chat.id,
+                                 '<b>Тренировка на грудные и трицепс❗️ Выбери свой уровень</b>:', parse_mode = 'html')
+                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      text="<b>Тренировка на грудные и трицепс</b>:", parse_mode='html',
+                                      reply_markup=None)
+
+            elif call.data == 'bazaspina':
+                bot.send_message(call.message.chat.id,
+                                 '<b>Тренировка спины и плечей❗️ Выбери свой уровень</b>:', parse_mode = 'html')
+                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      text="<b>Тренировка спины и плечей</b>:", parse_mode='html',
+                                      reply_markup=None)  
+
+            elif call.data == 'bazanogi':
+                bot.send_message(call.message.chat.id,
+                                 '<b>Тренировка ног❗️ Выбери свой уровень</b>:', parse_mode = 'html')
+                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      text="<b>Тренеровка ног</b>:", parse_mode='html',
+                                      reply_markup=None) 
+
+            elif call.data == 'bazapress':
+                bot.send_message(call.message.chat.id,
+                                 '<b>Тренировка пресса❗️ Выбери свой уровень</b>:', parse_mode = 'html')
+                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      text="<b>Тренеровка пресса</b>:", parse_mode='html',
+                                      reply_markup=None)                  
+
             elif call.data == 'bazachest1':
                 bot.send_message(call.message.chat.id,
                                  'Начнём тренировку❗️\n\n1. Отжимания🔥 широким постановкой 12 повторений. Руки сгибаем под 45 градусов, локти уходят в стороны❗️\n\n2. Отжимания, движение вниз занимает 4 секунды, а движение вверх 1 секунду. Делаем 12 🔥повторений❗️\n\n3. Ставим руки вместе и делаем 🔥отжимания, движение вниз занимает 4 секунды, а движение вверх 1 секунду. Локти идут вдоль тела❗️ Делаем 12 повторений❗️\n\nВыполняем 3 подхода в каждом упражнении, отдых между подходами 90 секунд❗️\n\nЕсли получилось сделать все повторения(12) в каждом🚀 из подходов, то переходим на LvL 2❗️')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                      text="<b>Тренировка груди и трицепса LvL 1</b>:", parse_mode='html',
+                                      text="<b>Тренировка на грудные и трицепс LvL 1</b>:", parse_mode='html',
                                       reply_markup=None) 
             
             elif call.data == 'bazachest2':
                 bot.send_message(call.message.chat.id,
                                  'Начнём тренировку❗️\n\n1. Отжимания🔥 широким постановкой 12 повторений. Руки сгибаем под 45 градусов, локти уходят в стороны❗️ Движение вниз занимает 4 секунд, вверх 1 секунду❗️ Выполняем 12 повторений\n\n2. Ставим руки вместе и делаем 🔥отжимания, движение вниз занимает 4 секунды, а движение вверх 1 секунду. Локти идут в стороны, напрягаем грудь❗️ Делаем 12 повторений❗️\n\n3. Отжимания, руки на ширине плеч, движение вниз занимает 4 секунды, а движение вверх 1 секунду. Делаем 12 🔥повторений❗️\n\n4. Ставим руки вместе и делаем 🔥отжимания, движение вниз занимает 4 секунды, а движение вверх 1 секунду. Локти идут вдоль тела, напрягаем трицепс❗️ Делаем 12 повторений❗️\n\n5. Отжимаемся🔥 и задерживаемся в нижней точке на максимальное время❗️\n\nВыполняем 3 подхода в каждом упражнении, отдых между подходами 90 секунд❗️\n\nЕсли получилось сделать все повторения(12) в каждом🚀 из подходов, то переходим на LvL 3❗️')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                      text="<b>Тренеровка груди и трицепса LvL 2</b>:", parse_mode='html',
+                                      text="<b>Тренировка на грудные и трицепс LvL 2</b>:", parse_mode='html',
                                       reply_markup=None)                   
             
             elif call.data == 'bazachest3':
                 bot.send_message(call.message.chat.id,
                                  'Начнём тренировку❗️\n\n1. Отжимания🔥, ноги на возвышенности. Ставим ноги на возвышенности и делаем отжимания, 2-3 секунды вниз и 1 секунду вверх❗️ Выполняем 12 повторений❗️\n\n2. Взрывные отжимания. Выжимаем максимально быстро, что бы в верхней точке ладони оторвались от пола❗️ Делаем 12 повторений❗️\n\n3. Отжимания, руки на ширине плеч, движение вниз занимает 4 секунды, а движение вверх 1 секунду. Делаем 12 🔥повторений❗️\n\n4. Ставим руки вместе и делаем 🔥отжимания, движение вниз занимает 4 секунды, а движение вверх 1 секунду. Локти идут вдоль тела, напрягаем трицепс❗️ Делаем 12 повторений❗️\n\n 5. Отжимаемся🔥 и задерживаемся в нижней точке на максимальное время❗️\n\nВыполняем 3 подхода в каждом упражнении, отдых между подходами 90 секунд❗️\n\nВ скором будущем выйдут новые уровни тренировки❗️')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                      text="<b>Тренеровка груди и трицепса LvL 3</b>:", parse_mode='html',
+                                      text="<b>Тренировка на грудные и трицепс LvL 3</b>:", parse_mode='html',
                                       reply_markup=None)                                         
             
             elif call.data == 'bazaspina1':
