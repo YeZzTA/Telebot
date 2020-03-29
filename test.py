@@ -266,8 +266,6 @@ def callback_inline(call):
                                       text="<b>Учим Planche</b>:", parse_mode='html',
                                       reply_markup=None)
 
-    except Exception as e:
-        print(repr(e))
 
 
 
