@@ -33,10 +33,12 @@ TITLES = {
 
 def get_keyboard2():
     keyboard = [
+            [
+            InlineKeyboardButton(TITLES[bazachest1], callback_data=bazachest1),
+            InlineKeyboardButton(TITLES[bazachest1], callback_data=bazachest1),
+        ],
         [
-            InlineKeyboardButton(TITLES[bazachest1], callback_data=bazachest1),
-            InlineKeyboardButton(TITLES[bazachest1], callback_data=bazachest1),
-            InlineKeyboardButton(TITLES[bazachest2], callback_data=bazachest1),
+            InlineKeyboardButton(TITLES[bazachest2], callback_data=bazachest1),            
         ],
     ]
     return InlineKeyboardMarkup(keyboard)
