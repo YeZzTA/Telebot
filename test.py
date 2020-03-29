@@ -132,21 +132,61 @@ def callback_inline(call):
                                       reply_markup=None)  
 
             elif call.data == 'bazachest':
+                markup = types.InlineKeyboardMarkup(row_width=2)
+                bazachest1 = types.InlineKeyboardButton("Chest LvL 1", callback_data='bazachest1')         
+                bazachest2 = types.InlineKeyboardButton("Chest LvL 2", callback_data='bazachest2') 
+                bazachest3 = types.InlineKeyboardButton("Chest LvL 3", callback_data='bazachest3') 
+
+                markup.add(bazachest1, bazachest2, bazachest3)
+
                 bot.send_message(call.message.chat.id,
                                  '<b>Тренировка на грудные и трицепс❗️ Выбери свой уровень</b>:', parse_mode = 'html')
-                
+                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      text="<b>Тренировка на грудные и трицепс</b>:", parse_mode='html',
+                                      reply_markup=None)
+
             elif call.data == 'bazaspina':
+                markup = types.InlineKeyboardMarkup(row_width=2)
+                bazaspina1 = types.InlineKeyboardButton("Back LvL 1", callback_data='bazaspina1')         
+                bazaspina2 = types.InlineKeyboardButton("Back LvL 2", callback_data='bazaspina2') 
+                bazaspina3 = types.InlineKeyboardButton("Back LvL 3", callback_data='bazaspina3') 
+
+                markup.add(bazaspina1, bazaspina2, bazaspina3)
+
                 bot.send_message(call.message.chat.id,
                                  '<b>Тренировка спины и плечей❗️ Выбери свой уровень</b>:', parse_mode = 'html')
- 
+                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      text="<b>Тренировка спины и плечей</b>:", parse_mode='html',
+                                      reply_markup=None)  
+
             elif call.data == 'bazanogi':
+                markup = types.InlineKeyboardMarkup(row_width=2)
+                bazanogi1 = types.InlineKeyboardButton("Legs LvL 1", callback_data='bazanogi1')         
+                bazanogi2 = types.InlineKeyboardButton("Legs LvL 2", callback_data='bazanogi2') 
+                bazanogi3 = types.InlineKeyboardButton("Legs LvL 3", callback_data='bazanogi3') 
+
+                markup.add(bazanogi1, bazanogi2, bazanogi3) 
+
                 bot.send_message(call.message.chat.id,
                                  '<b>Тренировка ног❗️ Выбери свой уровень</b>:', parse_mode = 'html')
+                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      text="<b>Тренеровка ног</b>:", parse_mode='html',
+                                      reply_markup=None) 
 
             elif call.data == 'bazapress':
+                markup = types.InlineKeyboardMarkup(row_width=2)
+                bazapress1 = types.InlineKeyboardButton("Abs LvL 1", callback_data='bazapress1')         
+                bazapress2 = types.InlineKeyboardButton("Abs LvL 2", callback_data='bazapress2') 
+                bazapress3 = types.InlineKeyboardButton("Abs LvL 3", callback_data='bazapress3') 
+
+                markup.add(bazapress1, bazapress2, bazapress3)
+
                 bot.send_message(call.message.chat.id,
                                  '<b>Тренировка пресса❗️ Выбери свой уровень</b>:', parse_mode = 'html')
-                  
+                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      text="<b>Тренеровка пресса</b>:", parse_mode='html',
+                                      reply_markup=None)                  
+
             elif call.data == 'bazachest1':
                 bot.send_message(call.message.chat.id,
                                  'Начнём тренировку❗️\n\n1. Отжимания🔥 широким постановкой 12 повторений. Руки сгибаем под 45 градусов, локти уходят в стороны❗️\n\n2. Отжимания, движение вниз занимает 4 секунды, а движение вверх 1 секунду. Делаем 12 🔥повторений❗️\n\n3. Ставим руки вместе и делаем 🔥отжимания, движение вниз занимает 4 секунды, а движение вверх 1 секунду. Локти идут вдоль тела❗️ Делаем 12 повторений❗️\n\nВыполняем 3 подхода в каждом упражнении, отдых между подходами 90 секунд❗️\n\nЕсли получилось сделать все повторения(12) в каждом🚀 из подходов, то переходим на LvL 2❗️')
@@ -316,3 +356,4 @@ def callback_inline(call):
 
 
 bot.polling(none_stop=True)
+
