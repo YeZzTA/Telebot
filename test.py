@@ -171,7 +171,7 @@ def callback_inline(call):
                                       reply_markup=None)  
 
             elif data == 'bazachest':
-                query.edit_message_text(
+                bot.edit_message_text(
                     text=current_text,
                     reply_markup=get_keyboard2(),
                 )                
