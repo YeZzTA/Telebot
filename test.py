@@ -32,16 +32,11 @@ TITLES = {
 
 
 def get_keyboard2():
-    keyboard = [
-            [
-            InlineKeyboardButton(TITLES[bazachest1], callback_data=bazachest1),
-            InlineKeyboardButton(TITLES[bazachest1], callback_data=bazachest1),
-        ],
-        [
-            InlineKeyboardButton(TITLES[bazachest2], callback_data=bazachest1),            
-        ],
-    ]
-    return InlineKeyboardMarkup(keyboard)
+          markup = types.InlineKeyboardMarkup(row_width=2)
+          bazachest1 = types.InlineKeyboardButton("Chest LvL 1", callback_data='bazachest1')  
+          bazachest2 = types.InlineKeyboardButton("Chest LvL 2", callback_data='bazachest2')
+          bazachest3 = types.InlineKeyboardButton("Chest LvL 3", callback_data='bazachest3')                         
+          markup.add(bazachest1, bazachest2, bazachest3)
 
 
 
