@@ -265,8 +265,6 @@ def callback_inline(call):
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="<b>Учим Planche</b>:", parse_mode='html',
                                       reply_markup=None)
-    except Exception as e:
-        print(repr(e))
 
 
 
