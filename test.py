@@ -14,10 +14,16 @@ def contact(message):
 
 
 @bot.message_handler(commands=['help'])
-def contact(message):
+def help(message):
     bot.send_message(message.chat.id, 'I have a large amount of options to discover. If you are new to Workout, '
                                       'I would rocommend you to read <b>Technique</b> guide.\n\nAfter that you can '
-                                      'continue discovering Workout world with another sections.', 
+                                      'continue discovering Workout world with another sections.',
+                     parse_mode='html')
+
+
+@bot.message_handler(commands=['update'])
+def update(message):
+    bot.send_message(message.chat.id, 'Something new is  coming❗',
                      parse_mode='html')
 
 
