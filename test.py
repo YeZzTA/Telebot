@@ -23,7 +23,7 @@ def help(message):
 
 @bot.message_handler(commands=['update'])
 def update(message):
-    bot.send_message(message.chat.id, 'Something new is  coming❗',
+    bot.send_message(message.chat.id, 'Something new is coming❗',
                      parse_mode='html')
 
 
@@ -332,7 +332,7 @@ def callback_inline(call):
                                       reply_markup=None)
             elif call.data == 'pushups':
                 bot.send_message(call.message.chat.id,
-                                 '',
+                                 '<b>Отжимания</b>, правильная техника:\n\n1. Руки на ширине плеч, ноги вместе❗️ \n\n2. Закручиваем кисти немного внутрь, при опускании кисти и грудные мышцы должны быть на одном уровне❗️\n\n3. Во время движения пресс напряжён, поясница не провисает❗️ Держим всё тело в напряжении❗️ \n\n4. При опускании вниз вдох, при подъёме резкий выдох❗️\n\n5. Опускаемся вниз до касания грудью пола, поднимаеся до полного распрямления рук в локтях. В вверхней точке прожимаем, сокращая при это грудные мышцы❗️',
                                  parse_mode='html')
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                       text="<b>Push-ups</b>:", parse_mode='html',
