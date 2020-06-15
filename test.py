@@ -43,7 +43,7 @@ def welcome(message):
     bot.send_message(message.chat.id,
                      "Hi there, <b>{0.first_name}</b>❗️\nMe - <b>{1.first_name}</b>, bot which was created to learn "
                      "new skills in Workout.\n\nWe constantly have new updates, so don't forget to update bot "
-                     "regularly❗️\n\nVersion - 1.0.0".format(
+                     "regularly❗️\n\n<b>Version - 1.0.0</b>".format(
                          message.from_user, bot.get_me()),
                      parse_mode='html', reply_markup=markup)
 
